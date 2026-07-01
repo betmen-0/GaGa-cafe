@@ -114,3 +114,60 @@ nav {
 .color-change-text:hover {
     color: var(--soft-rasberry);
 }
+
+.links-container {
+    display: flex;
+    align-items: center;
+}
+
+nav ul {
+    display: flex;
+    align-items: center;
+    text-align: left;
+    gap:3.75rem;
+}
+
+.nav-link {
+    color: var(--mocha-latte);
+    font-weight: bold;
+    font-size: 1.25rem;
+    letter-spacing: 1px;
+}
+
+ul {
+    margin:0;
+    padding: 0;
+    list-style:none;
+}
+
+a {
+    text-decoration: none;
+    font-weight: inherit;
+    color: inherit;
+}
+
+
+.underline-slide {
+    position: relative;
+}
+
+.underline-slide::after {
+    content:"";
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    border-radius: 0.75rem;
+    background: currentColor;
+    transition: width 0.5s ease;
+}
+
+.underline-slide:hover{
+    color: var(--soft-raspberry);
+}
+
+.underline-slide:hover::after {
+    width: 100%;
+}
+
