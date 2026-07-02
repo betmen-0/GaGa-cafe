@@ -17,6 +17,8 @@
     --lemon-curd: #FFE48A;
     --mocha-latte: #6B4226;
     --soft-raspberry: #C8657C;
+    --vanilla-foam: #ffffff;
+
 }
 * {
     margin: 0;
@@ -87,7 +89,7 @@ nav {
 }
 
 .bounce-glow-on {
-    filter: drop-shadow(0 0 5px var(--soft-rasberry));
+    filter: drop-shadow(0 0 5px var(--soft-raspberry));
     animation: bounce 0.5s ease;
 }
 
@@ -112,7 +114,7 @@ nav {
 }
 
 .color-change-text:hover {
-    color: var(--soft-rasberry);
+    color: var(--soft-raspberry);
 }
 
 .links-container {
@@ -169,5 +171,130 @@ a {
 
 .underline-slide:hover::after {
     width: 100%;
+}
+
+.icon-container {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    gap: 3.75rem;
+}
+
+.icon-btn {
+    position: relative;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    background: none;
+}
+
+#music-icon {
+    height: auto;
+    width: 30px;
+}
+
+.state-transition {
+    transition: opacity 0.2s ease;
+}
+
+.bounce-glow-on {
+    transition: filter 0.2s ease;
+}
+
+.bounce-glow-on:hover {
+    filter: drop-shadow(0 0 5px var(--soft-raspberry));
+    animation: bounce 0.5s ease;
+}
+
+.badge {
+    position: absolute;
+    bottom: -40px;
+    left: 50%;
+    transform: translateX(-50%) translateY(5px);
+    padding: 4px 8px;
+    text-align: center;
+    border-radius: 0.75rem;
+    font-family: var(--varela-round);
+    font-weight: bold;
+    font-size: 0.75rem;
+    letter-spacing: 1.2px;
+    color: var(--soft-raspberry);
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.15s ease, transform 0.15s ease;
+}
+
+.icon-btn:hover .badge {
+    opacity: 1;
+    transform: translatex(-50%) translateY(0px);
+}
+
+#about {
+    padding: 3.75rem 3.75rem 10rem 3.75rem;
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    justify-content: center;
+    gap: 4.688rem;
+}
+
+.cafe-info {
+    display: flex;
+    flex-direction: column;
+    gap: 3.75rem;
+}
+
+#intro-tagline {
+    color: var(--soft-raspberry);
+    font-weight: bold;
+    font-size: 2rem;
+    letter-spacing: 2.2px;
+}
+
+#gato-cafe {
+    font-size: 4.688rem;
+    letter-spacing: -6.5rem;
+    --webkit-text-stroke: 1px var(--vanilla-foam);
+    text-shadow: 5px 5px 0 var(--caramel-sand);
+}
+
+#cursor {
+    color: var(--soft-raspberry);
+    font-weight: bold;
+    animation: blink 0.7s step-end infinite;
+}
+
+.floating-el {
+    animation: float 3s ease-in-out infinite;
+    will-change: transform;
+}
+
+@keyframes blink {
+    0%, 100% {
+        opacity:1;
+    }
+    50% {
+        opacity:0;
+    }
+}
+
+@keyframes float {
+    0% , 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-6px);
+    }
+}
+
+#cafe-des {
+    width: 100%;
+    max-width: 600px;
+    color: var(--mocha-latte);
+    font-size: 1.5rem;
+    letter-spacing: 1.4px;
+    line-height: 2;
 }
 
