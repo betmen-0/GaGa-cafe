@@ -231,7 +231,19 @@
                                A silky smooth flan crowned with a cherry and drizzled with rich golden caramel.
                             <data class="item-price" value="6.50">$6.50</data>
                         </div>
-                    </article>    
+                    </article> 
+                    
+                    <article class="item-card" data-category="cakes-and-sweets">
+                        <div class="card-img">
+                            <img alt="kitty Cupcake" src="assets/imgs/kitty-cupcake.webp" width="140" height="160" loading="lazy">
+                        </div>
+                        <div class="card-info">
+                            <h3 class="item-name item-name-small">kitty Cupcake</h3>
+                            <p class="item-des">
+                              A soft, golden cupcake decorated like a sleepy little kitty, finished with silky frosting and a sprinkle of sweetness.
+                            <data class="item-price" value="6.50">$6.50</data>
+                        </div>
+                    </article>
 
                     <article class="item-card" data-category="cakes-and-sweets">
                         <div class="card-img">
@@ -258,10 +270,68 @@
                     </article>   
                 </div>
 
-                
+                <section id="order">
+
+                    <div class="order-header">
+                        <h2 id="order-title">Place Your Order</h2>
+                        <p id="order-tagline" class="floating-el">Ready to order? $_$</p>
+                    </div>
+
+                    <form id="form">
+                        <div class="form-header">
+
+                            <h3 id="form-title">※ ORDER FORM ※</h3>
+                        </div>
+
+                        <div class="form-content">
+
+                            <div class="form-row-1">
+
+                                <div class="field-wrapper">
+                                    <label for="name">NAME</label>
+                                    <input id="name" class="hover-sound click-sound" type="email" name="email" placeholder="Enter Your Mail" autocomplete="off" required/>
+                                </div>
+
+                                <div class="field-wrapper">
+                                    <label for="email">EMAIL</label>
+                                    <input id="email" class="hover-sound click-sound" type="email" name="email" placeholder="Enter Your Email" autocomplete="off" required/>
+                                    </div>
+
+                                <div class="field-wrapper select-wrapper">
+                                    <label for="drinks">DRINKS</label>
+                                    <select id="drinks" class="hover-sound click-sound" name="drinks" required>
+                                        <option value="" selected disabled>Select Your Drink. </option>
+
+                                        <optgroup label="Hot Drinks">
+                                            <option value="Raptime Latte">Raptime Latte</option>
+                                            <option value="Meow Mocha">Meow Mocha</option>
+                                            <option value="catdip Dream">Cardip Dream</option>
+                                            <option value="Midday Whisker">Midday Whisker</option>
+                                        </optgroup>
+
+                                        <optgroup label="Cold Drinks">
+                                            <option value="Eight Lives Shake">Eight Lives Shake</option>
+                                            <option value="Choco cat Shake">Choco cat shake</option>
+                                            <option value="Pink Law Boba">Pink Law Boba</option>
+                                            <option value="burrr-rry Taro Boba">Burrr-rry Taro Boba</option>
+                                        </optgroup>
+                                    </select>
+                                </div>
+
+                                <div class="field-wrapper select-wrapper" >
+                                    <label for="food">FOOD</label>
+                                    <select id="food" class="hover-sound click-sound" name="Food" required>
+                                        <option value="" selected disabled>Select Your Food.</option>
+
+                                        <optgroup label=""
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </section>
             </section>
             
         </main>
     </body>
-
 </html>
