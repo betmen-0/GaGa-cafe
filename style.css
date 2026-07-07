@@ -53,6 +53,14 @@ h1,h2,h3 {
     color: var(--mocha-latte);
 }
 
+
+label {
+    color: var(--mocha-latte);
+    font-family: var(--press-start-2p);
+    font-size: 0.875rem;
+    letter-spacing: -0.2px;
+}
+
 button {
     cursor: pointer;
     color: inherit;
@@ -420,8 +428,15 @@ a {
     padding: 1.875rem;
     max-height: 285px;
     height: 100%;
+    transition: background 0.3s ease-in;
+    border-color: 0.3s ease-in;
     max-width: 645px;
     border-radius: 1.5rem;
+}
+
+.item-card:hover {
+    background: var(--blush-rose);
+    border-color: var(--petal-pink);
 }
 
 .card-img {
@@ -529,3 +544,106 @@ form {
     letter-spacing: 1px;
 }
 
+.form-content {
+    display: flex;
+    padding: 3.75rem;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2.5rem;
+}
+
+.form-row-1 {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+}
+
+.field-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 0.625rem;
+}
+
+select {
+    cursor: pointer;
+    appearance: none;
+    font-family: var(--varela-round);
+    font-size: 1.125rem;
+    letter-spacing: 1px;
+    color: var(--mocha-latte);
+}
+
+.select-wrapper:after {
+    content: "▼";
+    position: absolute;
+    right: 30px;
+    top: 62%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    color: var(--mocha-latte);
+    font-size: 1.375rem;
+}
+
+optgroup {
+    color: var(--terracotta-dust);
+}
+
+option {
+    color: var(--mocha-latte);
+}
+
+textarea {
+    resize: vertical;
+    font-family: var(--varela-round);
+    font-size: 1.125rem;
+    letter-spacing: 1px;
+    color: var(--mocha-latte);
+}
+
+input[type="text"],input[type="email"],select,textarea {
+    transition: border-color 0.3s ease-in;
+}
+
+input[type="text"]:hover , input[type="text"]:focus, input[type="email"]:hover, input[type="email"]:focus,
+select:hover, select:focus, textarea:hover , textarea:focus {
+    border-color: var(--terracotta-dust);
+    outline: none;
+}
+
+input,select,textarea {
+    width: 100%;
+    height: 65px;
+    padding: 1.25rem 3.75rem;
+    border: 3px solid var(--mocha-latte);
+    box-shadow: 4px 4px 0 var(--mocha-latte);
+    background-color: var(--vanilla-foam);
+}
+
+input::placeholder,textarea::placeholder {
+    font-family: var(--varela-round);
+    font-size: 1.125rem;
+    letter-spacing: 1px;
+    color: var(--terracotta-dust);
+}
+
+input[type="text"],input[type="email"] {
+    font-family: var(--varela-round);
+    font-size: 1.125rem;
+    letter-spacing: 1px;
+    color: var(--mocha-latte);
+}
+
+.form-row-2 {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+#checkout-btn {
+    width: 100%;
+    max-width: 420px;
+    background-color: var(--soft-raspberry);
+    color: var(--vanilla-foam);
+}
