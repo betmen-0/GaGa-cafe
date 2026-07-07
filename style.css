@@ -647,3 +647,36 @@ input[type="text"],input[type="email"] {
     background-color: var(--soft-raspberry);
     color: var(--vanilla-foam);
 }
+
+#confirmation-order {
+    display: flex;
+    padding: 3.75rem;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.message-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.675rem;
+}
+
+#message , #back-to-the-cafe {
+    font-size: 1.5rem;
+    letter-spacing: 1.4px;
+}
+
+#message {
+    display: flex;
+    max-width: 650px;
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+    line-height: 2;
+    color: var(--mocha-latte);
+}
+
+#back-to-the-cafe {
+    font-weight: bold;
+}
