@@ -43,3 +43,36 @@ function unlockAudio() {
     document.removeEventListener("click", unlockAudio);
     document.addEventListener("mouseover", unlockAudio);
 }
+
+function playHoverSound(hoverSound) {
+    if (!audioUnlocked) return;
+    const sound = document.getElementById("hoverSound");
+    sound.currentTime = 0;
+    sound.play();
+}
+
+document.querySelectorAll(".hover-sound").forEach(el => {
+    el.addEventListener("mouseenter" , () => playHoverSound("hoverSound"));
+});
+
+function playClickSound(clickSound) {
+    const sound = document.getElementById("clickSound");
+    sound.currentTime = 0;
+    sound.play();
+}
+
+document.querySelectorAll(".click-sound").forEach(el => {
+    el.addEventListener("click" , () => playClickSound("clickSound"));
+});
+
+function playMeowSound(meowSound) {
+    const sound = document.getElementById("meowSound");
+    sound.currentTime = 0;
+    sound.play();
+
+    sound.volume = 0.75;
+}
+
+document.querySelectorAll(".meow-sound").forEach(el => {
+    el.addEventListener("click", () => playMeowSound("meowSound"));
+});
