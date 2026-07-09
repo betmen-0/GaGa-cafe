@@ -34,7 +34,7 @@
             </div>
 
             <div class="icon-container">
-                <button class="icon-btn state-transition hover-sound click-sound" onclick="toogleMusic()">
+                <button class="icon-btn state-transition hover-sound click-sound" onclick="toggleMusic()">
                     <img id="music-icon" class="bounce-glow-on" alt="Music off" src="assets/imgs/music-off-icon.svg">
                     <span class="badge" id="music-icon-badge">Music Off</span>
                 </button>
@@ -377,7 +377,7 @@
             </div>
         </footer>
 
-        <audio id="bg-music" loop>
+        <audio id="bg-music" loop preload="auto">
             <source src="assets/audio/11 - sweet cafe by stream cafe.mp3" type="audio/mpeg"/>
         </audio>
 

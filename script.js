@@ -3,17 +3,23 @@ function toggleMusic() {
     const icon = document.getElementById("music-icon");
     const badge = document.getElementById("music-icon-badge");
 
-    audio.volume = 0.25;
+    if (!audio || !icon || !badge) return;
 
+    audio.volume = 0.25;
     icon.style.opacity = "0";
 
     setTimeout(() => {
         if (audio.paused) {
-            audio.onplay();
-            icon.src = "assets/imgs/music-on-icon.svg";
-            icon.alt = "music On";
-            badge.textContent = "Music on"
-
+            audio.play().then(() => {
+                icon.src = "assets/imgs/music-on-icon.svg";
+                icon.alt = "Music On";
+                badge.textContent = "Music On";
+            }).catch((error) => {
+                console.warn("Background music could not start:", error);
+                icon.src = "assets/imgs/music-off-icon.svg";
+                icon.alt = "Music Off";
+                badge.textContent = "Music Off";
+            });
         } else {
             audio.pause();
             icon.src = "assets/imgs/music-off-icon.svg";
@@ -30,9 +36,11 @@ let audioUnlocked = false;
 function unlockAudio() {
     if (audioUnlocked) return;
 
-    ["hoverSound", "clickSound"].forEach(id => {
+    ["hoverSound", "clickSound", "meowSound"].forEach(id => {
         const sound = document.getElementById(id);
-        sound.onplay().then(() => {
+        if (!sound) return;
+
+        sound.play().then(() => {
             sound.pause();
             sound.currentTime = 0;
         }).catch(() => {});
@@ -41,40 +49,43 @@ function unlockAudio() {
     audioUnlocked = true;
 
     document.removeEventListener("click", unlockAudio);
+    document.removeEventListener("mouseover", unlockAudio);
     document.addEventListener("mouseover", unlockAudio);
 }
 
-function playHoverSound(hoverSound) {
+function playHoverSound() {
     if (!audioUnlocked) return;
     const sound = document.getElementById("hoverSound");
+    if (!sound) return;
     sound.currentTime = 0;
-    sound.play();
+    sound.play().catch(() => {});
 }
 
 document.querySelectorAll(".hover-sound").forEach(el => {
-    el.addEventListener("mouseenter" , () => playHoverSound("hoverSound"));
+    el.addEventListener("mouseenter", playHoverSound);
 });
 
-function playClickSound(clickSound) {
+function playClickSound() {
     const sound = document.getElementById("clickSound");
+    if (!sound) return;
     sound.currentTime = 0;
-    sound.play();
+    sound.play().catch(() => {});
 }
 
 document.querySelectorAll(".click-sound").forEach(el => {
-    el.addEventListener("click" , () => playClickSound("clickSound"));
+    el.addEventListener("click", playClickSound);
 });
 
-function playMeowSound(meowSound) {
+function playMeowSound() {
     const sound = document.getElementById("meowSound");
+    if (!sound) return;
     sound.currentTime = 0;
-    sound.play();
-
     sound.volume = 0.75;
+    sound.play().catch(() => {});
 }
 
 document.querySelectorAll(".meow-sound").forEach(el => {
-    el.addEventListener("click", () => playMeowSound("meowSound"));
+    el.addEventListener("click", playMeowSound);
 });
 
 
